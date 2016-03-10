@@ -4,9 +4,15 @@
 
 int main(int argc, char **argv) {
   // test IsEmpty
-  List Emplist = malloc(sizeof(List));
-  Emplist->Element = 1;
-  Emplist->Next = NULL;
-  printf("'IsEmpty' is pass ? %d\n", IsEmpty(Emplist));
+  List Emptylist = malloc(sizeof(List));
+  Emptylist->Element = 1;
+  Emptylist->Next = NULL;
+  printf("'IsEmpty' is pass ? %d\n", IsEmpty(Emptylist));
+  free(Emptylist);
+
+  // test NewList
+  List newList = NewList();
+  printf("'NewList' is pass ? %d\n", IsEmpty(newList));
+  free(newList);
   return 0;
 }
