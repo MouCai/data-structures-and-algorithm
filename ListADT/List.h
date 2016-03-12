@@ -1,4 +1,5 @@
-#ifndef _LIST_H
+#ifndef _LIST_
+  #define _LIST_ 1;
   typedef int ElementType;
 
   struct Node;
@@ -9,7 +10,8 @@
   List NewList(void);
   //List MakeEmpty(List L);
   int IsEmpty(List L);
-  /*void Append(List L, Node N);
+  //void Append(List L, Node N);
+  /*
   int IsLast(Position P, List L);
   Position Find(ElementType X, List L);
   void Delete(ElementType X, List L);
