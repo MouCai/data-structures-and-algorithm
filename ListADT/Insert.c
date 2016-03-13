@@ -7,6 +7,7 @@ void Insert(ElementType X, List L, Position P) {
   TempCell = malloc(sizeof(struct Node));
   if(TempCell == NULL) {
     printf("out of space");
+    exit(1);
   }
   TempCell->Next = P->Next;
   TempCell->Element = X;
