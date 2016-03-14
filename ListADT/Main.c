@@ -20,8 +20,12 @@ int main(int argc, char **argv) {
   printf("'Insert' is pass ? %d\n", newList->Next->Element);
 
   // test IsLast
-  Position LastPosition = P->Next;
-  printf("'IsLast' is pass ? %d\n", IsLast(LastPosition, newList));
+  Position TestLastPosition = P->Next;
+  printf("'IsLast' is pass ? %d\n", IsLast(TestLastPosition, newList));
+
+  // test Find
+  Insert(2, newList, TestLastPosition);
+  printf("'Find' is pass ? %d\n", Find(2, newList) != NULL);
 
   free(newList);
   return 0;
