@@ -4,7 +4,7 @@
 
 int main(int argc, char **argv) {
   // test IsEmpty
-  List Emptylist = malloc(sizeof(List));
+  List Emptylist = malloc(sizeof(struct Node));
   Emptylist->Element = 1;
   Emptylist->Next = NULL;
   printf("'IsEmpty' is pass ? %d\n", IsEmpty(Emptylist));
