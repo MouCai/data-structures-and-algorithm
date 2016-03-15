@@ -25,7 +25,24 @@ int main(int argc, char **argv) {
 
   // test Find
   Insert(2, newList, TestLastPosition);
-  printf("'Find' is pass ? %d\n", Find(2, newList) != NULL);
+  Position TestFindPosition = Find(2, newList);
+  printf("'Find' is pass ? %d\n", TestFindPosition->Element == 2);
+
+  // test Delete
+  int TestDeleteBeforeLength = 0;
+  Position TestDeletePosition = newList;
+  while(TestDeletePosition->Next != NULL) {
+    TestDeleteBeforeLength++;
+    TestDeletePosition = TestDeletePosition->Next;
+  }
+  Delete(2, newList);
+  int TestDeleteAfterLength = 0;
+  TestDeletePosition = newList;
+  while(TestDeletePosition->Next != NULL) {
+    TestDeleteAfterLength++;
+    TestDeletePosition = TestDeletePosition->Next;
+  }
+  printf("'Delete' is pass ? %d\n", (TestDeleteBeforeLength - 1) == TestDeleteAfterLength);
 
   free(newList);
   return 0;
