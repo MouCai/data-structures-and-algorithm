@@ -1,4 +1,4 @@
-objects = Find.o Insert.o IsEmpty.o IsLast.o Main.o NewList.o Delete.o
+objects = Find.o Insert.o IsEmpty.o IsLast.o Main.o NewList.o Delete.o DeleteList.o
 
 build: $(objects)
 	gcc -o test.out $(objects)

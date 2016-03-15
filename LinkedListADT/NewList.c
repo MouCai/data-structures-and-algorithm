@@ -4,6 +4,7 @@
 
 List NewList () {
   List L = malloc(sizeof(struct Node));
+
   if(L == NULL) {
     printf("out of space");
     exit(1);

@@ -43,7 +43,9 @@ int main(int argc, char **argv) {
     TestDeletePosition = TestDeletePosition->Next;
   }
   printf("'Delete' is pass ? %d\n", (TestDeleteBeforeLength - 1) == TestDeleteAfterLength);
-
-  free(newList);
+  
+  // Test DeleteList
+  DeleteList(&newList);
+  printf("'DeleteList' is pass ? %d\n'", newList == NULL);
   return 0;
 }

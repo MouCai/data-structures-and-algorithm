@@ -16,8 +16,8 @@
   Position Find(ElementType X, List L);
   void Delete(ElementType X, List L);
   void Insert(ElementType X, List L, Position P);
-  /*void DeleteList(List L);
-  Position Header(List L);
+  void DeleteList(List *L);
+  /*Position Header(List L);
   Position First(List L);
   Position Advance(Position P);
   ElementType Retrieve(Position P);*/
