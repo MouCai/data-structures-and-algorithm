@@ -8,7 +8,6 @@
   typedef PtrToNode Position;
 
   List NewList(void);
-  //List MakeEmpty(List L);
   int IsEmpty(List L);
   
   int IsLast(Position P, List L);
