@@ -27,6 +27,9 @@ int main(int argc, char **argv) {
   Insert(2, newList, TestLastPosition);
   Position TestFindPosition = Find(2, newList);
   printf("'Find' is pass ? %d\n", TestFindPosition->Element == 2);
+  
+  // test Retrieve
+  printf("'Retrieve' is pass ? %d\n", Retrieve(TestFindPosition) == 2);
 
   // test Delete
   int TestDeleteBeforeLength = 0;
