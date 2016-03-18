@@ -1,6 +1,6 @@
-#ifndef _DOUBLY_LINKED_LIST_
-  #define _DOUBLY_LINKED_LIST_ 1;
 
+  #define _DOUBLY_LINKED_LIST_ 1;
+  #include <stdlib.h>
   struct List {
      struct MNode *Head;
      struct MNode *Tail;
@@ -25,4 +25,4 @@
   NODE InsertAfter(LIST, NODE, NODE);
   NODE DeleteNode(LIST, NODE);
 
-#endif
+
