@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "List.h"
 
 ElementType Retrieve(Position P) {

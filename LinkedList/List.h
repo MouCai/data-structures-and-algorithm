@@ -1,5 +1,6 @@
 #ifndef _LIST_
   #define _LIST_ 1;
+  #include <stdlib.h>
   typedef int ElementType;
 
   struct Node;

@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "List.h"
 
 Position Find(ElementType X, List L) {

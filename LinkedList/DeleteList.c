@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "List.h"
 
 void DeleteList (List *L) {
