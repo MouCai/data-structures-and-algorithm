@@ -1,4 +1,4 @@
-
+#ifndef _DOUBLY_LINKED_LIST_
   #define _DOUBLY_LINKED_LIST_ 1;
   #include <stdlib.h>
   struct List {
@@ -24,5 +24,4 @@
   NODE DeleteTail(LIST);
   NODE InsertAfter(LIST, NODE, NODE);
   NODE DeleteNode(LIST, NODE);
-
-
+#endif
