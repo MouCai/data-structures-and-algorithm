@@ -14,7 +14,12 @@ int main(int argc, char **argv) {
   NODE TestTailItem = GetTail(TestNewList);
   int TestGetTailResult = TestNewList->LastNode == TestTailItem;
   printf("'GetTail' is pass ? %d \n", TestGetTailResult);
-  
+ 
+  // test GetHead
+  NODE TestGetHeadItem = GetHead(TestNewList);
+  int TestGetHeadResult = TestNewList->Head == TestGetHeadItem;
+  printf("'GetHead' is pass ? %d \n", TestGetHeadResult);
+
   // test IsEmpty
   printf("'IsEmpty' is pass ? %d \n", IsEmpty(TestNewList));
 
