@@ -28,7 +28,10 @@ int main(int argc, char **argv) {
   Prepend(TestNewList, TestPrependItem);
   printf("'Prepend' is pass ? %d \n", TestNewList->Head == TestPrependItem && TestPrependItem->Pred->Succ == TestPrependItem);
 
-  
+  // test Append
+  NODE TestAppendItem = malloc(sizeof(NODE));
+  Append(TestNewList, TestAppendItem);
+  printf("'Append' is pass ? %d \n", TestAppendItem->Succ->Pred == TestAppendItem && TestNewList->Tail == NULL);
 
   return 0 ;
 }
