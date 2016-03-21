@@ -16,6 +16,7 @@
   typedef struct List *LIST;
   
   LIST NewList(void);
+  int IsEmpty(LIST);
   NODE GetTail(LIST);
   NODE GetHead(LIST);
   NODE Append(LIST, NODE);

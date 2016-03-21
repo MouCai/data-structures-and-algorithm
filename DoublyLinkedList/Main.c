@@ -15,5 +15,8 @@ int main(int argc, char **argv) {
   int TestGetTailResult = TestNewList->LastNode == TestTailItem;
   printf("'GetTail' is pass ? %d \n", TestGetTailResult);
   
+  // test IsEmpty
+  printf("'IsEmpty' is pass ? %d \n", IsEmpty(TestNewList));
+
   return 0 ;
 }
