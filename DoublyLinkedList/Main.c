@@ -23,5 +23,12 @@ int main(int argc, char **argv) {
   // test IsEmpty
   printf("'IsEmpty' is pass ? %d \n", IsEmpty(TestNewList));
 
+  // test Prepend
+  NODE TestPrependItem = malloc(sizeof(NODE));
+  Prepend(TestNewList, TestPrependItem);
+  printf("'Prepend' is pass ? %d \n", TestNewList->Head == TestPrependItem && TestPrependItem->Pred->Succ == TestPrependItem);
+
+  
+
   return 0 ;
 }
