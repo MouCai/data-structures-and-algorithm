@@ -1,4 +1,4 @@
-objects = Main.o NewList.o GetTail.o GetHead.o IsEmpty.o Prepend.o Append.o
+objects = Main.o NewList.o GetTail.o GetHead.o IsEmpty.o Prepend.o Append.o DeleteHead.o
 
 build: $(objects)
 	gcc -o test.out $(objects)
