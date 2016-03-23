@@ -33,5 +33,9 @@ int main(int argc, char **argv) {
   Append(TestNewList, TestAppendItem);
   printf("'Append' is pass ? %d \n", TestAppendItem->Succ->Pred == TestAppendItem && TestNewList->Tail == NULL);
 
+  // test DeleteHead
+  NODE TestDeleteHeadItem = TestNewList->Head;
+  printf("'DeleteHead' is pass ? %d \n", TestDeleteHeadItem == DeleteHead(TestNewList) && TestDeleteHeadItem->Succ == GetHead(TestNewList));
+
   return 0 ;
 }
