@@ -37,5 +37,9 @@ int main(int argc, char **argv) {
   NODE TestDeleteHeadItem = TestNewList->Head;
   printf("'DeleteHead' is pass ? %d \n", TestDeleteHeadItem == DeleteHead(TestNewList) && TestDeleteHeadItem->Succ == GetHead(TestNewList));
 
+  // test DeleteTail
+  NODE TestDeleteTailItem = TestNewList->LastNode;
+  printf("'DeleteTail' is pass ? %d \n", TestDeleteTailItem == DeleteTail(TestNewList) && TestDeleteTailItem->Succ == (NODE)&TestNewList->Tail);
+
   return 0 ;
 }
