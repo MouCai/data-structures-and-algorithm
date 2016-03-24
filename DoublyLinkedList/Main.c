@@ -44,6 +44,12 @@ int main(int argc, char **argv) {
   printf("'DeleteTail' is pass ? %d \n", TestDeleteTailItem == DeleteTail(TestNewList) && 
                                          TestDeleteTailItem->Succ == (NODE)&TestNewList->Tail &&
                                          TestDeleteTailItem->Succ->Pred == TestNewList->LastNode);
+  // test InsertAfter
+  Append(TestNewList, TestDeleteTailItem);
+  Append(TestNewList, TestDeleteHeadItem);
+  NODE TestInsertAfterItem = malloc(sizeof(NODE));
+  InsertAfter(TestNewList, TestDeleteTailItem, TestInsertAfterItem);
+  printf("'InsertAfter' is pass ? %d \n", TestInsertAfterItem->Pred == TestDeleteTailItem && TestInsertAfterItem->Succ == TestDeleteHeadItem);
 
   return 0 ;
 }
