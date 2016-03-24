@@ -35,11 +35,15 @@ int main(int argc, char **argv) {
 
   // test DeleteHead
   NODE TestDeleteHeadItem = TestNewList->Head;
-  printf("'DeleteHead' is pass ? %d \n", TestDeleteHeadItem == DeleteHead(TestNewList) && TestDeleteHeadItem->Succ == GetHead(TestNewList));
+  printf("'DeleteHead' is pass ? %d \n", TestDeleteHeadItem == DeleteHead(TestNewList) && 
+                                         TestDeleteHeadItem->Succ == TestNewList->Head &&
+                                         TestDeleteHeadItem->Pred->Succ == TestNewList->Head);
 
   // test DeleteTail
   NODE TestDeleteTailItem = TestNewList->LastNode;
-  printf("'DeleteTail' is pass ? %d \n", TestDeleteTailItem == DeleteTail(TestNewList) && TestDeleteTailItem->Succ == (NODE)&TestNewList->Tail);
+  printf("'DeleteTail' is pass ? %d \n", TestDeleteTailItem == DeleteTail(TestNewList) && 
+                                         TestDeleteTailItem->Succ == (NODE)&TestNewList->Tail &&
+                                         TestDeleteTailItem->Succ->Pred == TestNewList->LastNode);
 
   return 0 ;
 }
