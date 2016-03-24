@@ -56,6 +56,7 @@ int main(int argc, char **argv) {
 
   // test DeleteNode
   NODE TestDeleteNodeItem = DeleteNode(TestNewList, TestInsertAfterItem);
-
+  printf("'DeleteNode' is pass ? %d \n", TestDeleteTailItem->Succ != TestDeleteNodeItem && 
+                                         TestDeleteHeadItem->Pred != TestDeleteNodeItem);
   return 0 ;
 }
