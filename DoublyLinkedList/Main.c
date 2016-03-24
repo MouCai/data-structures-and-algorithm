@@ -26,12 +26,14 @@ int main(int argc, char **argv) {
   // test Prepend
   NODE TestPrependItem = malloc(sizeof(NODE));
   Prepend(TestNewList, TestPrependItem);
-  printf("'Prepend' is pass ? %d \n", TestNewList->Head == TestPrependItem && TestPrependItem->Pred->Succ == TestPrependItem);
+  printf("'Prepend' is pass ? %d \n", TestNewList->Head == TestPrependItem && 
+                                      TestPrependItem->Pred->Succ == TestPrependItem);
 
   // test Append
   NODE TestAppendItem = malloc(sizeof(NODE));
   Append(TestNewList, TestAppendItem);
-  printf("'Append' is pass ? %d \n", TestAppendItem->Succ->Pred == TestAppendItem && TestNewList->Tail == NULL);
+  printf("'Append' is pass ? %d \n", TestAppendItem->Succ->Pred == TestAppendItem && 
+                                     TestNewList->Tail == NULL);
 
   // test DeleteHead
   NODE TestDeleteHeadItem = TestNewList->Head;
@@ -49,7 +51,11 @@ int main(int argc, char **argv) {
   Append(TestNewList, TestDeleteHeadItem);
   NODE TestInsertAfterItem = malloc(sizeof(NODE));
   InsertAfter(TestNewList, TestDeleteTailItem, TestInsertAfterItem);
-  printf("'InsertAfter' is pass ? %d \n", TestInsertAfterItem->Pred == TestDeleteTailItem && TestInsertAfterItem->Succ == TestDeleteHeadItem);
+  printf("'InsertAfter' is pass ? %d \n", TestInsertAfterItem->Pred == TestDeleteTailItem && 
+                                          TestInsertAfterItem->Succ == TestDeleteHeadItem);
+
+  // test DeleteNode
+  NODE TestDeleteNodeItem = DeleteNode(TestNewList, TestInsertAfterItem);
 
   return 0 ;
 }
