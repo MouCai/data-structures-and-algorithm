@@ -37,13 +37,13 @@ int main(int argc, char **argv) {
 
   // test DeleteHead
   NODE TestDeleteHeadItem = TestNewList->Head;
-  printf("'DeleteHead' is pass ? %d \n", TestDeleteHeadItem == DeleteHead(TestNewList) && 
+  printf("'DeleteHead&Shift' is pass ? %d \n", TestDeleteHeadItem == DeleteHead(TestNewList) && 
                                          TestDeleteHeadItem->Succ == TestNewList->Head &&
                                          TestDeleteHeadItem->Pred->Succ == TestNewList->Head);
 
   // test DeleteTail
   NODE TestDeleteTailItem = TestNewList->LastNode;
-  printf("'DeleteTail' is pass ? %d \n", TestDeleteTailItem == DeleteTail(TestNewList) && 
+  printf("'DeleteTail&Pop' is pass ? %d \n", TestDeleteTailItem == DeleteTail(TestNewList) && 
                                          TestDeleteTailItem->Succ == (NODE)&TestNewList->Tail &&
                                          TestDeleteTailItem->Succ->Pred == TestNewList->LastNode);
   // test InsertAfter
@@ -58,5 +58,10 @@ int main(int argc, char **argv) {
   NODE TestDeleteNodeItem = DeleteNode(TestNewList, TestInsertAfterItem);
   printf("'DeleteNode' is pass ? %d \n", TestDeleteTailItem->Succ != TestDeleteNodeItem && 
                                          TestDeleteHeadItem->Pred != TestDeleteNodeItem);
+
+  // test Push
+  NODE TestPushItem = malloc(sizeof(NODE));
+  Push(TestNewList, TestPushItem);
+  printf("'Push' is pass ? %d \n", TestNewList->LastNode == TestPushItem);
   return 0 ;
 }
