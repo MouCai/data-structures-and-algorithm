@@ -16,16 +16,17 @@
   typedef struct List *LIST;
   
   LIST NewList(void);
-  int IsEmpty(LIST);
-  NODE GetTail(LIST);
-  NODE GetHead(LIST);
   NODE Append(LIST, NODE);
   NODE Prepend(LIST, NODE);
   NODE DeleteHead(LIST);
   NODE DeleteTail(LIST);
   NODE InsertAfter(LIST, NODE, NODE);
   NODE DeleteNode(LIST, NODE);
-  int Push(LIST, NODE);
-  NODE Shift(LIST);
-  NODE Pop(LIST);
+  NODE Push(LIST, NODE);
+  
+  #define GetTail(LIST) ((LIST)->LastNode)
+  #define GetHead(LIST) ((LIST)->Head)
+  #define IsEmpty(LIST) ((LIST)->Head->Succ == NULL)
+  #define Pop DeleteTail
+  #define Shift DeleteHead
 #endif
