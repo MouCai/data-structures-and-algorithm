@@ -6,6 +6,7 @@ LIST NewList() {
     L->Head = (NODE)&L->Tail;
     L->LastNode = (NODE)&L->Head;
     L->Tail = NULL;
+    L->Length = 0;
     return L;
   }
   return NULL;

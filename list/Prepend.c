@@ -5,5 +5,6 @@ NODE Prepend(LIST L, NODE N) {
   N->Pred = (NODE)&L->Head;
   L->Head->Pred = N;
   L->Head = N;
+  L->Length++;
   return N;
 }

@@ -63,5 +63,8 @@ int main(int argc, char **argv) {
   NODE TestPushItem = malloc(sizeof(NODE));
   Push(TestNewList, TestPushItem);
   printf("'Push' is pass ? %d \n", TestNewList->LastNode == TestPushItem);
+
+  // test Length
+  printf("'Length' is pass ? %d \n", Length(TestNewList) == 3 );
   return 0 ;
 }

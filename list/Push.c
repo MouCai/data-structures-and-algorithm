@@ -5,5 +5,6 @@ NODE Push(LIST L, NODE N){
   N->Pred = L->LastNode;
   N->Succ = (NODE)&L->Tail;
   L->LastNode = N;
+  L->Length++;
   return N;
 }

@@ -5,6 +5,7 @@
      struct MNode *Head;
      struct MNode *Tail;
      struct MNode *LastNode;
+     unsigned long Length;
   };
   
   struct MNode {
@@ -27,6 +28,7 @@
   #define GetTail(LIST) ((LIST)->LastNode)
   #define GetHead(LIST) ((LIST)->Head)
   #define IsEmpty(LIST) ((LIST)->Head->Succ == NULL)
+  #define Length(LIST) ((LIST)->Length)
   #define Pop DeleteTail
   #define Shift DeleteHead
 #endif
