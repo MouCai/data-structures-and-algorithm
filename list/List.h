@@ -23,7 +23,6 @@
   NODE DeleteTail(LIST);
   NODE InsertAfter(LIST, NODE, NODE);
   NODE DeleteNode(LIST, NODE);
-  NODE Push(LIST, NODE);
   
   #define GetTail(LIST) ((LIST)->LastNode)
   #define GetHead(LIST) ((LIST)->Head)
@@ -31,4 +30,5 @@
   #define Length(LIST) ((LIST)->Length)
   #define Pop DeleteTail
   #define Shift DeleteHead
+  #define Push Append
 #endif
