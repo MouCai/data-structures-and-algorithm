@@ -23,6 +23,7 @@
   NODE DeleteTail(LIST);
   NODE InsertAfter(LIST, NODE, NODE);
   NODE DeleteNode(LIST, NODE);
+  void Destory(LIST);
   
   #define GetTail(LIST) ((LIST)->LastNode)
   #define GetHead(LIST) ((LIST)->Head)

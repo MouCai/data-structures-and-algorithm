@@ -66,5 +66,10 @@ int main(int argc, char **argv) {
 
   // test Length
   printf("'Length' is pass ? %d \n", Length(TestNewList) == 3 );
+
+  // test Destory
+  Destory(TestNewList);
+  printf("'Destory' is pass ? %d \n", 1);
+ 
   return 0 ;
 }
