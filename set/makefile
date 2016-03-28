@@ -1,4 +1,4 @@
-objects = 
+objects =  main.o set_init.o
 
 build: $(objects)
 	gcc -o test.out $(objects)
@@ -8,6 +8,9 @@ $(objects): set.h
 test:
 	./test.out
 
+run:
+	make
+	make test
 .PHONY : clean
 clean :
 	-rm $(objects)
