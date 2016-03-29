@@ -1,6 +1,7 @@
 #ifndef _SET_
   #define _SET_
   #include <stdlib.h>
+  #include <string.h>
   typedef struct _SetElm_ {
     void *data;
     struct _SetElm_ *prev;
