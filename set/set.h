@@ -26,4 +26,7 @@
   int set_is_subset(const Set *set1, const Set *set2);
   int set_is_equal(const Set *set1, const Set *set2);
   #define set_size(set) ((set)->size)
+  #define set_head(set) ((set)->head)
+  #define set_tail(set) ((set)->tail)
+  #define set_is_empty(set) ((set)->size == 0)
 #endif
