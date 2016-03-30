@@ -30,4 +30,7 @@
   #define set_head(set) ((set)->head)
   #define set_tail(set) ((set)->tail)
   #define set_is_empty(set) ((set)->size == 0)
+  #define set_next(elm) ((elm)->next)
+  #define set_prev(elm) ((elm)->prev)
+  #define set_data(elm) ((elm)->data)
 #endif
