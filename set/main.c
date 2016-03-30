@@ -12,6 +12,12 @@ int main(int argc, char **argv) {
   // test set_remove
   // TODO
 
+  // test set_is_member
+  // TODO
+  
+  // test set_insert
+  // TODO
+
   // test set_destory
   set_destory(TestSet);
   printf("'set_destory' is pass? %d \n", TestSet->size == 0);

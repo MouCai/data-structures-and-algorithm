@@ -1,4 +1,4 @@
-objects =  main.o set_init.o set_destory.o set_remove.o
+objects =  main.o set_init.o set_destory.o set_remove.o set_insert.o
 
 build: $(objects)
 	gcc -o test.out $(objects)
