@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "set.h"
 
-int match (const void *key1, const void *key2) {
+static int _match (const void *key1, const void *key2) {
   const int* ip1 = key1;
   const int* ip2 = key2;
   if (*ip1 == *ip2)
@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
   Set *testSet = malloc(sizeof(Set));
 
   // test set_init
-  set_init(testSet, match, NULL);
+  set_init(testSet, _match, NULL);
   printf("'set_init' is pass ? %d \n", testSet->head == NULL &&
                                        testSet->tail == NULL &&
                                        testSet->size == 0);

@@ -4,7 +4,7 @@ int set_insert (Set *set, void *data) {
   SetElm *new;
 
   if (set_is_member(set, data))
-    return -1;
+    return 1;
 
   new = malloc(sizeof(Set));
   if (new == NULL)
