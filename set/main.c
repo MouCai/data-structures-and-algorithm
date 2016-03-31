@@ -22,15 +22,21 @@ int main(int argc, char **argv) {
   int testData2 = 1;
   set_insert(testSet, &testData1);
   set_insert(testSet, &testData2);
-  printf("'set_insert' is pass ? %d \n",set_size(testSet) == 1);
+  printf("'set_insert' is pass ? %d \n", set_size(testSet) == 1);
   
 
 
   // test set_is_member
-  // TODO
-  
+  int testData3 = 1;
+  printf("'set_is_member' is pass ? %d \n", set_is_member(testSet, &testData3) == 1);
+ 
+
   // test set_remove
-  // TODO
+  void *testPtr1;
+  int testData4 = 1;
+  testPtr1 = &testData4;
+  set_remove(testSet, &testPtr1);
+  printf("'set_remove' is pass ? %d \n", set_size(testSet) == 0);
 
   // test set_destory
   set_destory(testSet);
