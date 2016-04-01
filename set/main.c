@@ -69,6 +69,9 @@ int main(int argc, char **argv) {
 
   // test set_destory
   set_destory(testSet);
+  set_destory(testSet2);
+  set_destory(testSet3);
+  set_destory(testSetu);
   printf("'set_destory' is pass? %d \n", testSet->size == 0);
   return 0;
 }
