@@ -68,12 +68,21 @@ int main(int argc, char **argv) {
   // test set_is_equal
   set_insert(testSet2, &testData9);
   printf("'set_is_equal' is pass? %d \n", set_is_equal(testSet2, testSetu));
+
+  // test set_intersection
+  testPtr1 = &testData9;
+  set_remove(testSet2, &testPtr1);
+  Set *testSeti = malloc(sizeof(Set));
+  set_intersection(testSeti, testSet2, testSetu);
+  printf("'set_intersection' is pass? %d \n", set_is_member(testSeti, &testData7) &&
+                                              set_is_member(testSeti, &testData8));
   
   // test set_destory
   set_destory(testSet);
   set_destory(testSet2);
   set_destory(testSet3);
   set_destory(testSetu);
+  set_destory(testSeti);
   printf("'set_destory' is pass? %d \n", testSet->size == 0);
   return 0;
 }
