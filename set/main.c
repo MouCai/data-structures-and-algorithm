@@ -65,8 +65,10 @@ int main(int argc, char **argv) {
   set_union(testSetu, testSet2, testSet3);
   printf("'set_union' is pass? %d \n", testSetu->size == 4);
 
-
-
+  // test set_is_equal
+  set_insert(testSet2, &testData9);
+  printf("'set_is_equal' is pass? %d \n", set_is_equal(testSet2, testSetu));
+  
   // test set_destory
   set_destory(testSet);
   set_destory(testSet2);
