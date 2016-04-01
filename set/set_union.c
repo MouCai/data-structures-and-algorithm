@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "set.h"
 
 int set_union (Set *setu, const Set *set1, const Set *set2) {
@@ -22,6 +23,5 @@ int set_union (Set *setu, const Set *set1, const Set *set2) {
         break;
     }
   }
-
   return 0;
 }

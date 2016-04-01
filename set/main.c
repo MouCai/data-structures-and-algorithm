@@ -38,6 +38,35 @@ int main(int argc, char **argv) {
   set_remove(testSet, &testPtr1);
   printf("'set_remove' is pass ? %d \n", set_size(testSet) == 0);
 
+
+  // test set_union;
+  Set *testSet2 = malloc(sizeof(Set));
+  set_init(testSet2, _match, NULL);
+
+  Set *testSet3 = malloc(sizeof(Set));
+  set_init(testSet3, _match, NULL);
+
+  Set *testSetu = malloc(sizeof(Set));
+
+  int testData5 = 1;
+  int testData6 = 2;
+  int testData7 = 3;
+
+  int testData8 = 3;
+  int testData9 = 4;
+
+  set_insert(testSet2, &testData5);
+  set_insert(testSet2, &testData6);
+  set_insert(testSet2, &testData7);
+ 
+  set_insert(testSet3, &testData8);
+  set_insert(testSet3, &testData9);
+
+  set_union(testSetu, testSet2, testSet3);
+  printf("'set_union' is pass? %d \n", testSetu->size == 4);
+
+
+
   // test set_destory
   set_destory(testSet);
   printf("'set_destory' is pass? %d \n", testSet->size == 0);

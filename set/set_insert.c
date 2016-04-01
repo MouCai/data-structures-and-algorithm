@@ -19,6 +19,7 @@ int set_insert (Set *set, void *data) {
   } else {
     set->tail->next = new;
     new->prev = set->tail;
+    set->tail = new;
   }
   set->size++;
   return 0;
