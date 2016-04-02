@@ -80,12 +80,19 @@ int main(int argc, char **argv) {
   // test set_is_subset
   printf("'set_is_subset' is pass? %d \n", set_is_subset(testSet3, testSetu));
 
+  // test set_difference
+  Set *testSetd = malloc(sizeof(Set));
+  set_difference(testSetd, testSet2, testSet3);
+  printf("'set_difference' is pass? %d \n", set_is_member(testSetd, &testData5) &&
+                                            set_is_member(testSetd, &testData6));
+
   // test set_destory
   set_destory(testSet);
   set_destory(testSet2);
   set_destory(testSet3);
   set_destory(testSetu);
   set_destory(testSeti);
+  set_destory(testSetd);
   printf("'set_destory' is pass? %d \n", testSet->size == 0);
   return 0;
 }
