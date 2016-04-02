@@ -77,6 +77,9 @@ int main(int argc, char **argv) {
   printf("'set_intersection' is pass? %d \n", set_is_member(testSeti, &testData7) &&
                                               set_is_member(testSeti, &testData8));
   
+  // test set_is_subset
+  printf("'set_is_subset' is pass? %d \n", set_is_subset(testSet3, testSetu));
+
   // test set_destory
   set_destory(testSet);
   set_destory(testSet2);
