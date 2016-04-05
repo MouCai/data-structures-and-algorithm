@@ -43,6 +43,12 @@ int main(int argc, char **argv) {
                                           (*(int *)testPtr1) == 3 &&
                                           (*(int *)list_data(testList1->tail)) == 1);
 
+  // test list_shift
+  list_shift(testList1, &testPtr1);
+  printf("'list_shift' is pass ? %d \n", list_size(testList1) == 0 &&
+                                          (*(int *)testPtr1) == 1);
+
+
   // test list_destory
   list_destory(testList1);
   printf("'list_destory' is pass ? %d \n", list_size(testList1) == 0);
