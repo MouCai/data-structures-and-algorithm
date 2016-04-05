@@ -1,4 +1,4 @@
-objects = main.o list_init.o
+objects = main.o list_init.o list_insert_next.o list_push.o
 
 build: $(objects)
 	gcc -o test.out $(objects)

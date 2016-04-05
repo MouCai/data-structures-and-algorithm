@@ -21,7 +21,7 @@
   int list_insert_next(List *list, ListElm *elm, const void *data);
   int list_insert_prev(List *list, ListElm *elm, const void *data);
   int list_remove(List *list, ListElm *elm, void **data);
-  int list_push(List *list, ListElm *elm);
+  int list_push(List *list, const void *data);
   ListElm list_pop(List *list);
   ListElm list_shift(List *list);
 
