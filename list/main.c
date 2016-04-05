@@ -37,6 +37,12 @@ int main(int argc, char **argv) {
                                           testList1->head->next == testList1->tail);
       
 
+  // test list_pop
+  list_pop(testList1, &testPtr1);
+  printf("'list_pop' is pass ? %d \n", list_size(testList1) == 1 &&
+                                          (*(int *)testPtr1) == 3 &&
+                                          (*(int *)list_data(testList1->tail)) == 1);
+
   // test list_destory
   list_destory(testList1);
   printf("'list_destory' is pass ? %d \n", list_size(testList1) == 0);

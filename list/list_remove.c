@@ -1,4 +1,4 @@
-#include "List.h"
+#include "list.h"
 
 int list_remove(List *list, ListElm *elm, void **data) {
   if (elm == NULL || list_size(list) == 0)
