@@ -37,5 +37,9 @@ int main(int argc, char **argv) {
                                           testList1->head->next == testList1->tail);
       
 
+  // test list_destory
+  list_destory(testList1);
+  printf("'list_destory' is pass ? %d \n", list_size(testList1) == 0);
+
   return 0;
 }

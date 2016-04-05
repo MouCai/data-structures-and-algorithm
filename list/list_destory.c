@@ -1,11 +1,12 @@
-#include "List.h"
+#include "list.h"
 
-void Destory(LIST L){
-  NODE TempCell = L->Head;
-  unsigned long Len = L->Length;
-  while(Len--) {
-    free(TempCell);
-    TempCell = TempCell->Succ;
-  };
-  free(L);
+void list_destory(List *list) {
+  void *data;
+  while (list_size(list)) {
+    if (list_remove(list, list_tail(list), (void **)&data) == 0 && list->destory != NULL) {
+      list->destory(data);
+    }
+  }
+  memset(list, 0, sizeof(List));
+  return;
 }
