@@ -18,16 +18,24 @@ int main(int argc, char **argv) {
   printf("'list_insert_next' is pass ? %d \n", (*(int *)list_data(testList1->tail)) == 1);
 
   // test list_push
-  int testData2 = 2;
+  int testData2 = 3;
   testPtr1 = &testData2;
   list_push(testList1, testPtr1);
-  printf("'list_push' is pass ? %d \n", (*(int *)list_data(testList1->tail)) == 2);
+  printf("'list_push' is pass ? %d \n", (*(int *)list_data(testList1->tail)) == 3);
 
   // test list_insert_prev
-  int testData3 = 3;
+  int testData3 = 2;
   testPtr1 = &testData3;
   list_insert_prev(testList1, testList1->tail, testPtr1);
-  printf("'list_insert_prev' is pass ? %d \n", (*(int *)list_data(testList1->tail->prev)) == 3);
+  printf("'list_insert_prev' is pass ? %d \n", (*(int *)list_data(testList1->tail->prev)) == 2);
+
+  // test list_remove
+  testPtr1 = &testData2;
+  list_remove(testList1, testList1->tail->prev, &testPtr1);
+  printf("'list_remove' is pass ? %d \n", list_size(testList1) == 2 &&
+                                          (*(int *)testPtr1) == 2 &&
+                                          testList1->head->next == testList1->tail);
+      
 
   return 0;
 }
