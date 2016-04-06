@@ -7,7 +7,8 @@ listsObjects = ../../list/list_init.o \
 							 ../../list/list_pop.o \
 							 ../../list/list_shift.o 
 chtblObjects = main.o chtbl_init.o
-objects = $(listsObjects) $(chtblObjects)
+hashObjcts = ../hash.o
+objects = $(listsObjects) $(hashObjcts) $(chtblObjects)
 build: $(objects)
 	gcc -o test.out $(objects)
 	make clean

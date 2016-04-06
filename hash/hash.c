@@ -1,5 +1,5 @@
 #include "hash.h"
-unsigned int hash_pjw(const void *key) {
+int hash_pjw(const void *key) {
   const char *ptr;
   unsigned int val;
   
