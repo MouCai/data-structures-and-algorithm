@@ -6,7 +6,7 @@ listsObjects = ../../list/list_init.o \
 							 ../../list/list_destory.o \
 							 ../../list/list_pop.o \
 							 ../../list/list_shift.o 
-chtblObjects = main.o 
+chtblObjects = main.o chtbl_init.o
 objects = $(listsObjects) $(chtblObjects)
 build: $(objects)
 	gcc -o test.out $(objects)
