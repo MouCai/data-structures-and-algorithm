@@ -27,9 +27,23 @@ int main(int argc, char **argv) {
   printf("'chtbl_lookup' is pass ? %d \n", testPtr1 == &testData1 &&
                                            chtbl_lookup(testCHTbl1, &testPtr2) == -1);
 
+  // test chtbl_remove
+  int testData4 = 2;
+  void *testPtr4;
+  testPtr4 = &testData4;
+  chtbl_insert(testCHTbl1, testPtr2);
+  chtbl_remove(testCHTbl1, &testPtr4);
+  printf("'chtbl_remove' is pass ? %d \n", testPtr4 == &testData3 &&
+                                           chtbl_lookup(testCHTbl1, &testPtr2) == -1);
+
+
+  
+  
+
   // test chtbl_destory
   chtbl_destory(testCHTbl1);
   printf("'chtbl_destory' is pass ? %d \n", testCHTbl1->buckets == 0);
+
 
   free(testCHTbl1);
   return 0;
