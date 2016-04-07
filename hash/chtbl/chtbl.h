@@ -19,4 +19,5 @@
   int chtbl_lookup(CHTbl *htbl, void **data);
 
   #define chtbl_size(htbl) ((htbl)->size)
+  #define chtbl_buckets(htbl) ((htbl)->buckets)
 #endif

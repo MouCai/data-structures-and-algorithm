@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "list.h"
 static int _match (const void *key1, const void *key2) {
-  return (*(int *)key1) == (*(int *)key2);
+  return (* (int *)key1) == (* (int *)key2);
 }
 
 int main(int argc, char **argv) {
