@@ -6,7 +6,7 @@ int set_insert (Set *set, void *data) {
   if (set_is_member(set, data))
     return 1;
 
-  new = (setElm *)malloc(sizeof(SetElm));
+  new = (SetElm *)malloc(sizeof(SetElm));
   if (new == NULL)
     return -1;
   new->data = data;

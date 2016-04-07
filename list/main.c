@@ -6,7 +6,7 @@ static int _match (const void *key1, const void *key2) {
 
 int main(int argc, char **argv) {
   // test list_init
-  List *testList1 = malloc(sizeof(List));
+  List *testList1 = (List *)malloc(sizeof(List));
   list_init(testList1, NULL, _match);
   printf("'list_init' is pass ? %d \n", testList1->tail == NULL &&
                                         testList1->head == NULL &&
@@ -53,5 +53,6 @@ int main(int argc, char **argv) {
   list_destory(testList1);
   printf("'list_destory' is pass ? %d \n", list_size(testList1) == 0);
 
+  free(testList1);
   return 0;
 }

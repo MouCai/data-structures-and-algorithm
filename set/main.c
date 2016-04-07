@@ -10,7 +10,7 @@ static int _match (const void *key1, const void *key2) {
 }
 
 int main(int argc, char **argv) {
-  Set *testSet = malloc(sizeof(Set));
+  Set *testSet = (Set *)malloc(sizeof(Set));
 
   // test set_init
   set_init(testSet, _match, NULL);
@@ -40,13 +40,13 @@ int main(int argc, char **argv) {
 
 
   // test set_union;
-  Set *testSet2 = malloc(sizeof(Set));
+  Set *testSet2 = (Set *)malloc(sizeof(Set));
   set_init(testSet2, _match, NULL);
 
-  Set *testSet3 = malloc(sizeof(Set));
+  Set *testSet3 = (Set *)malloc(sizeof(Set));
   set_init(testSet3, _match, NULL);
 
-  Set *testSetu = malloc(sizeof(Set));
+  Set *testSetu = (Set *)malloc(sizeof(Set));
 
   int testData5 = 1;
   int testData6 = 2;
@@ -72,7 +72,7 @@ int main(int argc, char **argv) {
   // test set_intersection
   testPtr1 = &testData9;
   set_remove(testSet2, &testPtr1);
-  Set *testSeti = malloc(sizeof(Set));
+  Set *testSeti = (Set *)malloc(sizeof(Set));
   set_intersection(testSeti, testSet2, testSetu);
   printf("'set_intersection' is pass? %d \n", set_is_member(testSeti, &testData7) &&
                                               set_is_member(testSeti, &testData8));
@@ -81,7 +81,7 @@ int main(int argc, char **argv) {
   printf("'set_is_subset' is pass? %d \n", set_is_subset(testSet3, testSetu));
 
   // test set_difference
-  Set *testSetd = malloc(sizeof(Set));
+  Set *testSetd = (Set *)malloc(sizeof(Set));
   set_difference(testSetd, testSet2, testSet3);
   printf("'set_difference' is pass? %d \n", set_is_member(testSetd, &testData5) &&
                                             set_is_member(testSetd, &testData6));
@@ -94,5 +94,12 @@ int main(int argc, char **argv) {
   set_destory(testSeti);
   set_destory(testSetd);
   printf("'set_destory' is pass? %d \n", testSet->size == 0);
+
+  free(testSet);
+  free(testSet2);
+  free(testSet3);
+  free(testSetu);
+  free(testSeti);
+  free(testSetd);
   return 0;
 }
