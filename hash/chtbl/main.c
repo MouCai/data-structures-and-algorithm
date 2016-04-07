@@ -7,7 +7,7 @@ static int _match (const void *key1, const void *key2) {
 int main(int argc, char **argv) {
   // test chtbl_init
   CHTbl *testCHTbl1 = (CHTbl *)malloc(sizeof(CHTbl));
-  chtbl_init(testCHTbl1, 10, hash_pjw, _match, NULL);
+  chtbl_init(testCHTbl1, 10, hash_sdbm, _match, NULL);
   printf("'chtbl_init' is pass ? %d \n", testCHTbl1->table[9].size == 0);
 
   // test chtbl_insert

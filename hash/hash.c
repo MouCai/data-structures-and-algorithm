@@ -1,7 +1,7 @@
 #include "hash.h"
 int hash_pjw(const void *key) {
   const char *ptr;
-  unsigned int val;
+  int val;
   
   val = 0;
   ptr = key;
@@ -15,5 +15,20 @@ int hash_pjw(const void *key) {
     }
     ptr++;
   }
+  return val;
+}
+
+int hash_sdbm(const void *key) {
+  const char *ptr;
+  int val;
+
+  val = 0;
+  ptr = key;
+
+  while (*ptr != '\0') {
+    val = *ptr + (val << 6) + (val << 16) - val;
+    ptr++;
+  }
+
   return val;
 }
