@@ -34,11 +34,8 @@ int main(int argc, char **argv) {
   chtbl_insert(testCHTbl1, testPtr2);
   chtbl_remove(testCHTbl1, &testPtr4);
   printf("'chtbl_remove' is pass ? %d \n", testPtr4 == &testData3 &&
+                                           chtbl_size(testCHTbl1) == 1 &&
                                            chtbl_lookup(testCHTbl1, &testPtr2) == -1);
-
-
-  
-  
 
   // test chtbl_destory
   chtbl_destory(testCHTbl1);
