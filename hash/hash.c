@@ -32,3 +32,18 @@ int hash_sdbm(const void *key) {
 
   return val;
 }
+
+
+int hash_djb(const void *key) {
+  const char *ptr;
+  int val;
+
+  val = 5381;
+  ptr = key;
+
+  while (*ptr != '\0') {  
+    val = ((val << 5) + val) + *ptr;
+    ptr++;
+  }
+  return val;
+}

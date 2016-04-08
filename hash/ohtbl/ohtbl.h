@@ -1,6 +1,7 @@
 #ifndef _OHTBL_H_
   #define _OHTBL_H_
   #include <stdlib.h>
+  #include <string.h>
   #include "../hash.h"
   typedef struct _OHTbl_ {
     int positions;
