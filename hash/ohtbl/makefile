@@ -1,4 +1,6 @@
-objects = main.o
+hashObjcts = ../hash.o
+ohtblObjects = main.o ohtbl_init.o
+objects = $(hashObjcts) $(ohtblObjects)
 
 build: $(objects)
 	gcc -o test.out $(objects)
