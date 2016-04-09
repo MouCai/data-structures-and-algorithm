@@ -8,7 +8,7 @@ static int _match (const void *key1, const void *key2) {
 int main(int argc, char **argv) {
   // test ohtbl_init
   OHTbl *testOHTbl1 = (OHTbl *)malloc(sizeof(OHTbl));
-  ohtbl_init(testOHTbl1, 10, hash_pjw, hash_sdbm, _match, NULL);
+  ohtbl_init(testOHTbl1, 16, hash_pjw, hash_sdbm, _match, NULL);
   printf("'ohtbl_init' is pass ? %d \n", testOHTbl1->table[9] == NULL);
 
   // test ohtbl_insert
@@ -29,6 +29,10 @@ int main(int argc, char **argv) {
   ohtbl_remove(testOHTbl1, &testPtr1);
   printf("'ohtbl_remove' is pass ? %d \n", testPtr1 == &testData1);
 
+  // test ohtbl_destory
+  ohtbl_destory(testOHTbl1);
+  printf("'ohtbl_destory' is pass ? %d \n", testOHTbl1->table == 0);
 
+  free(testOHTbl1);
   return 0;
 }

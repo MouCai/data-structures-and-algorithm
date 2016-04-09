@@ -1,5 +1,5 @@
 hashObjcts = ../hash.o
-ohtblObjects = main.o ohtbl_init.o ohtbl_insert.o ohtbl_lookup.o ohtbl_remove.o
+ohtblObjects = main.o ohtbl_init.o ohtbl_insert.o ohtbl_lookup.o ohtbl_remove.o ohtbl_destory.o
 objects = $(hashObjcts) $(ohtblObjects)
 
 build: $(objects)
