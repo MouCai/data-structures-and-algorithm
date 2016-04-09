@@ -10,5 +10,19 @@ int main(int argc, char **argv) {
   OHTbl *testOHTbl1 = (OHTbl *)malloc(sizeof(OHTbl));
   ohtbl_init(testOHTbl1, 10, hash_pjw, hash_sdbm, _match, NULL);
   printf("'ohtbl_init' is pass ? %d \n", testOHTbl1->table[9] == NULL);
+
+  // test ohtbl_insert
+  int testData1 = 1;
+  void *testPtr1;
+  testPtr1 = &testData1;
+  ohtbl_insert(testOHTbl1, testPtr1);
+  printf("'ohtbl_insert' is pass ? %d \n", testOHTbl1->size == 1);
+
+  // test ohtbl_lookup
+  int testData2 = 1;
+  testPtr1 = &testData2;
+  ohtbl_lookup(testOHTbl1, &testPtr1);
+  printf("'ohtbl_lookup' is pass ? %d \n", testPtr1 == &testData1);
+
   return 0;
 }
