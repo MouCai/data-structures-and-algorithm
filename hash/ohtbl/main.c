@@ -24,5 +24,11 @@ int main(int argc, char **argv) {
   ohtbl_lookup(testOHTbl1, &testPtr1);
   printf("'ohtbl_lookup' is pass ? %d \n", testPtr1 == &testData1);
 
+  // test ohtbl_remove
+  testPtr1 = &testData2;
+  ohtbl_remove(testOHTbl1, &testPtr1);
+  printf("'ohtbl_remove' is pass ? %d \n", testPtr1 == &testData1);
+
+
   return 0;
 }
