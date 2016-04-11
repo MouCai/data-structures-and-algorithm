@@ -1,4 +1,4 @@
-objects = main.o
+objects = main.o bitree_init.o
 
 build: $(objects)
 	gcc -o test.out $(objects)
