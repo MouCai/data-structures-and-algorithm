@@ -7,7 +7,7 @@ int main (int argc, char **argv) {
   bitree_init(testTree1, NULL, NULL);
   printf("'bitree_init' is pass ? %d \n", testTree1->size == 0 &&
                                           testTree1->root == NULL);
-
+  
   free(testTree1);
   return 0;
 }
