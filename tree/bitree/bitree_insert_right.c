@@ -5,11 +5,11 @@ int bitree_insert_right(Bitree *tree, BiTreeNode *node, const void *data) {
   if (node == NULL) {
     if (bitree_size(tree) > 0)
       return -1;
-    *position = &tree->root;
+    position = &tree->root;
   } else {
     if (bitree_right(node) != NULL)
       return -1;
-    *position = &bitree_right(node)
+    position = &bitree_right(node);
   }
 
   if ((new = malloc(sizeof(BiTreeNode))) == NULL)

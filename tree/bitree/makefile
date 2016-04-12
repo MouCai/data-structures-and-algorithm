@@ -1,4 +1,4 @@
-objects = main.o bitree_init.o
+objects = main.o bitree_init.o bitree_insert_left.o bitree_insert_right.o
 
 build: $(objects)
 	gcc -o test.out $(objects)

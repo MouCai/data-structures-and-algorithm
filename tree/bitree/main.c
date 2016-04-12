@@ -7,7 +7,19 @@ int main (int argc, char **argv) {
   bitree_init(testTree1, NULL, NULL);
   printf("'bitree_init' is pass ? %d \n", testTree1->size == 0 &&
                                           testTree1->root == NULL);
-  
+  // test bitree_insert_left
+  int testData1 = 1;
+  void *testPtr1;
+  testPtr1 = &testData1;
+  bitree_insert_left(testTree1, NULL, testPtr1);
+  printf("'bitree_insert_left' is pass ? %d \n", bitree_data(testTree1->root) == testPtr1);
+
+  // test bitree_insert_right
+  int testData2 = 2;
+  testPtr1 = &testData2;
+  bitree_insert_right(testTree1, testTree1->root, testPtr1);
+  printf("'bitree_insert_right' is pass ? %d \n", bitree_data(testTree1->root->right) == testPtr1);
+
   free(testTree1);
   return 0;
 }
