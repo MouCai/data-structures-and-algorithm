@@ -23,8 +23,13 @@ int main (int argc, char **argv) {
   // test bitree_remove_left & bitree_remove_right
   bitree_insert_right(testTree1, testTree1->root->right, testPtr1);
   bitree_insert_left(testTree1, testTree1->root->right->right, testPtr1);
-  bitree_remove_right(testTree1, NULL);
-  printf("'bitree_remove_left & bitree_remove_right' is pass ? %d \n", bitree_size(testTree1) == 0);
+  bitree_remove_right(testTree1, testTree1->root);
+  printf("'bitree_remove_left & bitree_remove_right' is pass ? %d \n", bitree_size(testTree1) == 1);
+
+
+  // test bitree_destory
+  bitree_destory(testTree1);
+  printf("'bitree_destory' is pass ? %d \n", bitree_size(testTree1) == 0);
 
   free(testTree1);
   return 0;
