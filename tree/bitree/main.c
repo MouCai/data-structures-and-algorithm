@@ -27,10 +27,39 @@ int main (int argc, char **argv) {
   printf("'bitree_remove_left & bitree_remove_right' is pass ? %d \n", bitree_size(testTree1) == 1);
 
 
+  // test bitree_merge
+  int testData3 = 3;
+  Bitree *testTree2 = malloc(sizeof(Bitree));
+  bitree_init(testTree2, NULL, NULL);
+  testPtr1 = &testData1;
+  bitree_insert_left(testTree2, NULL, testPtr1);
+
+  Bitree *testTree3 = malloc(sizeof(Bitree));
+  bitree_init(testTree3, NULL, NULL);
+  testPtr1 = &testData2;
+  bitree_insert_left(testTree3, NULL, testPtr1);
+
+  testPtr1 = &testData3;
+  Bitree *testTree4 = malloc(sizeof(Bitree));
+  bitree_merge(testTree4, testTree2, testTree3, testPtr1);
+  int result = *(int *)bitree_data(testTree4->root) + 
+    *(int *)bitree_data(testTree4->root->left) + 
+    *(int *)bitree_data(testTree4->root->right);
+  printf("'bitree_merge' is pass ? %d \n", result  == 6 && 
+                                           bitree_size(testTree4) == 3 &&
+                                           bitree_root(testTree2) == NULL &&
+                                           bitree_root(testTree3) == NULL);
+
   // test bitree_destory
   bitree_destory(testTree1);
+  bitree_destory(testTree2);
+  bitree_destory(testTree3);
+  bitree_destory(testTree4);
   printf("'bitree_destory' is pass ? %d \n", bitree_size(testTree1) == 0);
 
   free(testTree1);
+  free(testTree2);
+  free(testTree3);
+  free(testTree4);
   return 0;
 }
