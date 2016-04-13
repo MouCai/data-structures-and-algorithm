@@ -8,12 +8,12 @@ void bitree_remove_left(Bitree *tree, BiTreeNode *node) {
   if (node == NULL)
     position = &tree->root;
   else
-    position = &tree->left;
+    position = &node->left;
 
   if (*position != NULL) {
     bitree_remove_right(tree, *position);
     bitree_remove_left(tree, *position);
-    if (bitree->destory != NULL)
+    if (tree->destory != NULL)
       tree->destory((*position)->data);
     free(*position);
     *position = NULL;
