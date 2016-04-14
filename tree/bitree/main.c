@@ -1,6 +1,19 @@
 #include <stdio.h>
 #include "bitree.h"
 
+static void _callback(void *data, void **result) {
+  *(int *)*result = *(int *)*result + *(int *)data;
+  return;
+}
+
+static void _callback2(void *data, void **result) {
+  *(int *)*result = *(int *)data;
+  int *temp = *result;
+  temp++;
+  *result = (void *)temp;
+  return;
+}
+
 int main (int argc, char **argv) {
   // test bitree_init
   Bitree *testTree1 = malloc(sizeof(Bitree));
@@ -29,6 +42,7 @@ int main (int argc, char **argv) {
 
   // test bitree_merge
   int testData3 = 3;
+
   Bitree *testTree2 = malloc(sizeof(Bitree));
   bitree_init(testTree2, NULL, NULL);
   testPtr1 = &testData1;
@@ -42,6 +56,7 @@ int main (int argc, char **argv) {
   testPtr1 = &testData3;
   Bitree *testTree4 = malloc(sizeof(Bitree));
   bitree_merge(testTree4, testTree2, testTree3, testPtr1);
+
   int result = *(int *)bitree_data(testTree4->root) + 
     *(int *)bitree_data(testTree4->root->left) + 
     *(int *)bitree_data(testTree4->root->right);
@@ -50,6 +65,43 @@ int main (int argc, char **argv) {
                                            bitree_root(testTree2) == NULL &&
                                            bitree_root(testTree3) == NULL);
 
+  // test bitree_traverse_preorder
+  int testData4 = 4;
+  void *testPrt2;
+  testPrt2 = &testData4;
+
+
+  int testArray1[10];
+  void *testPtr3;
+  testPtr3 = &testArray1[0];
+
+  bitree_traverse_preorder(testTree4->root, _callback, &testPrt2);
+  bitree_traverse_preorder(testTree4->root, _callback2, &testPtr3);
+  printf("'bitree_traverse_preorder' is pass ? %d \n", *(int *)testPrt2 == 10 &&  
+                                                       testArray1[0] == 3 &&
+                                                       testArray1[1] == 1 &&
+                                                       testArray1[2] == 2);
+
+  
+  // test bitree_traverse_inorder
+  testData4 = 4;
+  testPtr3 = &testArray1[0];
+  bitree_traverse_inorder(testTree4->root, _callback, &testPrt2);
+  bitree_traverse_inorder(testTree4->root, _callback2, &testPtr3);
+  printf("'bitree_traverse_inorder' is pass ? %d \n", *(int *)testPrt2 == 10 &&
+                                                      testArray1[0] == 1 &&
+                                                      testArray1[1] == 3 &&
+                                                      testArray1[2] == 2);  
+  // test bitree_traverse_postorder
+  testData4 = 4;
+  testPtr3 = &testArray1[0];
+  bitree_traverse_postorder(testTree4->root, _callback, &testPrt2);
+  bitree_traverse_postorder(testTree4->root, _callback2, &testPtr3);
+
+  printf("'bitree_traverse_postorder' is pass ? %d \n", *(int *)testPrt2 == 10 &&
+                                                        testArray1[0] == 1 &&
+                                                        testArray1[1] == 2 &&
+                                                        testArray1[2] == 3);  
   // test bitree_destory
   bitree_destory(testTree1);
   bitree_destory(testTree2);

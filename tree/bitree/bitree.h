@@ -23,6 +23,11 @@
   void bitree_remove_right(Bitree *tree, BiTreeNode *node);
   int bitree_merge(Bitree *merge, Bitree *left, Bitree *right, const void *data);
 
+  void bitree_traverse_preorder(BiTreeNode *node, void (*callback)(void *data, void **result), void **result);
+  void bitree_traverse_inorder(BiTreeNode *node, void (*callback)(void *data, void **result), void **result);
+  void bitree_traverse_postorder(BiTreeNode *node, void (*callback)(void *data, void **result), void **result);
+
+
   #define bitree_size(tree) ((tree)->size)
   #define bitree_root(tree) ((tree)->root)
   #define bitree_is_eob(node) ((node) == NULL)
