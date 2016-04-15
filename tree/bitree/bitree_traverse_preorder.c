@@ -1,7 +1,7 @@
 #include "bitree.h"
 
 void bitree_traverse_preorder(BiTreeNode *node, void (*callback)(void *data, void **result), void **result) {
-  if (bitree_is_eob(node)) {
+  if (!bitree_is_eob(node)) {
     if (node->data != NULL)
       callback(node->data, result);
     if (!bitree_is_eob(node->left))
