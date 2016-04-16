@@ -3,7 +3,10 @@
 static int _match (const void *key1, const void *key2) {
   return (* (int *)key1) == (* (int *)key2);
 }
-
+static void _callback(void *data, void **result) {
+  *(int *)*result = *(int *)*result + *(int *)data;
+  return;
+}
 int main(int argc, char **argv) {
   // test list_init
   List *testList1 = (List *)malloc(sizeof(List));
@@ -15,19 +18,31 @@ int main(int argc, char **argv) {
   int testData1 = 1;
   void *testPtr1 = &testData1;
   list_insert_next(testList1, NULL, testPtr1);
-  printf("'list_insert_next' is pass ? %d \n", (*(int *)list_data(testList1->tail)) == 1);
+  printf("'list_insert_next' is pass ? %d \n", (*(int *)list_data(testList1->tail)) == 1 &&
+                                               (*(int *)list_data(testList1->head)) == 1);
 
   // test list_push
   int testData2 = 3;
   testPtr1 = &testData2;
   list_push(testList1, testPtr1);
-  printf("'list_push' is pass ? %d \n", (*(int *)list_data(testList1->tail)) == 3);
+  printf("'list_push' is pass ? %d \n", (*(int *)list_data(testList1->tail)) == 3 &&
+                                        (*(int *)list_data(testList1->head)) == 1);
 
   // test list_insert_prev
   int testData3 = 2;
   testPtr1 = &testData3;
   list_insert_prev(testList1, testList1->tail, testPtr1);
-  printf("'list_insert_prev' is pass ? %d \n", (*(int *)list_data(testList1->tail->prev)) == 2);
+  printf("'list_insert_prev' is pass ? %d \n", (*(int *)list_data(testList1->tail->prev)) == 2 &&
+                                               (*(int *)list_data(testList1->tail->prev->next)) == 3 &&
+                                               (*(int *)list_data(testList1->head->next)) == 2 &&
+                                               (*(int *)list_data(testList1->tail)) == 3 &&
+                                               (*(int *)list_data(testList1->head)) == 1);
+
+  // test list_each
+  int testData4 = 0;
+  testPtr1 = &testData4;
+  list_each(testList1, _callback, &testPtr1);
+  printf("'list_each' is pass ? %d \n", *(int *)testPtr1 == 6);
 
   // test list_remove
   testPtr1 = &testData2;

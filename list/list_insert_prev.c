@@ -21,7 +21,7 @@ int list_insert_prev(List *list, ListElm *elm, const void *data) {
     if (elm->prev == NULL)
       list->head = new;
     else
-      elm->prev->next = elm;
+      elm->prev->next = new;
     elm->prev = new;
   }
 

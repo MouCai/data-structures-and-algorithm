@@ -18,6 +18,7 @@
   
   void list_init(List *list, void (*destory)(void *data), int (*match)(const void *key1, const void *key2));
   void list_destory(List *list);
+  void list_each(List *list, void (*callback)(void *data, void **result), void **result);
   int list_insert_next(List *list, ListElm *elm, const void *data);
   int list_insert_prev(List *list, ListElm *elm, const void *data);
   int list_remove(List *list, ListElm *elm, void **data);
