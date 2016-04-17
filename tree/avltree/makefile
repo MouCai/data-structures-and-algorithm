@@ -10,7 +10,7 @@ bitreeObjects = ./../bitree/main.o \
 								./../bitree/bitree_traverse_inorder.o \
 								./../bitree/bitree_traverse_postorder.o
 
-avltreeObjects = main.o
+avltreeObjects = main.o avltree_destory.o
 
 $(objects) = $(bitreeObjects) $(avltreeObjects)
 
