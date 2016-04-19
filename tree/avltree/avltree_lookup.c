@@ -1,6 +1,6 @@
 #include "avltree.h"
 
-static int lookup (AvlTree *tree, AvlTreeNode *node, void **data) {
+static int lookup (AvlTree *tree, BiTreeNode *node, void **data) {
   int cmpval, retval = -1;
   if (bitree_is_eob(tree))
     return retval;
@@ -16,7 +16,7 @@ static int lookup (AvlTree *tree, AvlTreeNode *node, void **data) {
     } else {
       retval = -1;
     }
-  }  
+  }
   return retval;
 }
 

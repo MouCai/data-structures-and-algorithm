@@ -1,6 +1,6 @@
 #include "avltree.h"
 
-static void destory_left(AvlTree *tree, AvlTreeNode *node) {
+static void destory_left(AvlTree *tree, BiTreeNode *node) {
   AvlTreeNode **position;
   if (bitree_size(tree) == 0)
     return;
