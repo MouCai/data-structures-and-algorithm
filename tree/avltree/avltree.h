@@ -12,7 +12,7 @@
     int factor;
   } AvlTreeNode;
 
-  typedef AvlTree Bitree;
+  typedef Bitree AvlTree;
 
   void avltree_destory(AvlTree *tree);
   int avltree_insert(AvlTree *tree, const void *data);

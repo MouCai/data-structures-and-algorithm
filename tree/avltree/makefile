@@ -1,5 +1,4 @@
-bitreeObjects = ./../bitree/main.o \
-								./../bitree/bitree_init.o \
+bitreeObjects = ./../bitree/bitree_init.o \
 								./../bitree/bitree_insert_left.o \
                 ./../bitree/bitree_insert_right.o \
 								./../bitree/bitree_remove_left.o \
@@ -10,9 +9,9 @@ bitreeObjects = ./../bitree/main.o \
 								./../bitree/bitree_traverse_inorder.o \
 								./../bitree/bitree_traverse_postorder.o
 
-avltreeObjects = main.o avltree_destory.o avltree_lookup.o
+avltreeObjects = main.o avltree_destory.o avltree_lookup.o avltree_insert.o avltree_remove.o
 
-$(objects) = $(bitreeObjects) $(avltreeObjects)
+objects = $(bitreeObjects) $(avltreeObjects)
 
 build: $(objects)
 	gcc -o test.out $(objects)

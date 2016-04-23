@@ -12,7 +12,7 @@ static int lookup (AvlTree *tree, BiTreeNode *node, void **data) {
   } else {
     if (!((AvlTreeNode *)bitree_data(node))->hidden) {
       *data = ((AvlTreeNode *)bitree_data(node))->data;
-      retval = 0
+      retval = 0;
     } else {
       retval = -1;
     }
