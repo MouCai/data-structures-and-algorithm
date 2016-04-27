@@ -65,6 +65,18 @@ int main (int argc, char **argv) {
                                              testArray1[5] == 5 &&
                                              testArray1[6] == 7 &&
                                              testArray1[7] == 8 );
+  // test avltree_maximum
+  testPtr1 = &testData1;
+  avltree_maximum(testTree1, &testPtr1);
+  printf("'avltree_maximum' is pass ? %d \n", *(int *)testPtr1 == 8);
+
+
+  // test avltree_minimum
+  testPtr1 = &testData8;
+  avltree_minimum(testTree1, &testPtr1);
+  printf("'avltree_minimum' is pass ? %d \n", *(int *)testPtr1 == 1);  
+
+
   // test avltree_remove
   testPtr1 = &testData6;
   avltree_remove(testTree1, testPtr1);

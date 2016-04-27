@@ -18,6 +18,8 @@
   int avltree_insert(AvlTree *tree, const void *data);
   int avltree_remove(AvlTree *tree, const void *data);
   int avltree_lookup(AvlTree *tree, void **data);
+  int avltree_maximum(AvlTree *tree, void **data);
+  int avltree_minimum(AvlTree *tree, void **data);
 
   #define avltree_init bitree_init
   #define avltree_size(tree) ((tree)->size)

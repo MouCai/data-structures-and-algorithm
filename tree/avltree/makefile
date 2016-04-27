@@ -9,7 +9,7 @@ bitreeObjects = ./../bitree/bitree_init.o \
 								./../bitree/bitree_traverse_inorder.o \
 								./../bitree/bitree_traverse_postorder.o
 
-avltreeObjects = main.o avltree_destory.o avltree_lookup.o avltree_insert.o avltree_remove.o
+avltreeObjects = main.o avltree_destory.o avltree_lookup.o avltree_insert.o avltree_remove.o avltree_maximum.o avltree_minimum.o
 
 objects = $(bitreeObjects) $(avltreeObjects)
 
