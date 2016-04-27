@@ -80,5 +80,8 @@ int main (int argc, char **argv) {
                                              testArray1[6] == 7 &&
                                              testArray1[7] == 0 );
   
+  // test avltree_destory
+  avltree_destory(testTree1);
+  printf("'avltree_destory' is pass ? %d \n", testTree1->root == 0);
   return 0;
 }
