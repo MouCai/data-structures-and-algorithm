@@ -66,20 +66,25 @@ int main (int argc, char **argv) {
                                              testArray1[6] == 7 &&
                                              testArray1[7] == 8 );
   // test avltree_remove
-  testPtr1 = &testData8;
+  testPtr1 = &testData6;
   avltree_remove(testTree1, testPtr1);
   testPtr1 = &testArray1[0];
-  testArray1[7] = 0;
   bitree_traverse_preorder(testTree1->root, _callback, &testPtr1);
   printf("'avltree_remove' is pass ? %d \n", testArray1[0] == 4 &&
                                              testArray1[1] == 2 &&
                                              testArray1[2] == 1 &&
                                              testArray1[3] == 3 &&
-                                             testArray1[4] == 6 &&
-                                             testArray1[5] == 5 &&
-                                             testArray1[6] == 7 &&
-                                             testArray1[7] == 0 );
-  
+                                             testArray1[4] == 5 &&
+                                             testArray1[5] == 7 &&
+                                             testArray1[6] == 8);
+ 
+  // test avltree_lookup
+  testPtr1 = &testData8;
+  avltree_lookup(testTree1, &testPtr1);
+  printf("'avltree_lookup' is pass ? %d \n", avltree_lookup(testTree1, &testPtr1) == 0 &&
+                                             *(int *)testPtr1 == 8);
+   
+
   // test avltree_destory
   avltree_destory(testTree1);
   printf("'avltree_destory' is pass ? %d \n", testTree1->root == 0);

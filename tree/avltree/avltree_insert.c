@@ -3,12 +3,14 @@
 static void rotate_left(BiTreeNode **node) {
   BiTreeNode *left, *grandchild;
   left = bitree_left(*node);
+  // LL rotate
   if (((AvlTreeNode *)bitree_data(left))->factor == AVL_LEFT_HEAVY) {
     bitree_left(*node) = bitree_right(left);
     bitree_right(left) = *node;
     ((AvlTreeNode *)bitree_data(*node))->factor = AVL_BALANCED;
     ((AvlTreeNode *)bitree_data(left))->factor = AVL_BALANCED;
     *node = left;
+  // LR rotate
   } else {
     grandchild = bitree_right(left);
     bitree_right(left) = bitree_left(grandchild);
@@ -38,12 +40,14 @@ static void rotate_left(BiTreeNode **node) {
 static void rotate_right(BiTreeNode **node) {
   BiTreeNode *right, *grandchild;
   right = bitree_right(*node);
+  // RR rotate
   if (((AvlTreeNode *)bitree_data(right))->factor == AVL_RIGHT_HEAVY) {
     bitree_right(*node) = bitree_left(right);
     bitree_left(right) = *node;
     ((AvlTreeNode *)bitree_data(*node))->factor = AVL_BALANCED;
     ((AvlTreeNode *)bitree_data(right))->factor = AVL_BALANCED;
     *node = right;
+  // RL rotate
   } else {
     grandchild = bitree_left(right);
     bitree_left(right) = bitree_right(grandchild);
