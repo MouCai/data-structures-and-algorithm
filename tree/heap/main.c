@@ -56,5 +56,10 @@ int main (int argc, char **argv) {
                                         *(int *)testHeap1->tree[8] == 50 &&
                                         *(int *)testHeap1->tree[9] == 40);
 
+  // test heap_destory
+  heap_destory(testHeap1);
+  printf("'heap_destory' is pass ? %d \n", bitree_size(testHeap1) == 0);
+
+  free(testHeap1);
   return 0;
 }
