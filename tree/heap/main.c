@@ -45,21 +45,36 @@ int main (int argc, char **argv) {
   heap_insert(testHeap1, testPtr1);
 
   printf("'heap_insert' is pass ? %d \n", testHeap1->size == 10 &&
-                                        *(int *)testHeap1->tree[0] == 90 &&
-                                        *(int *)testHeap1->tree[1] == 85 &&
-                                        *(int *)testHeap1->tree[2] == 70 &&
-                                        *(int *)testHeap1->tree[3] == 60 &&
-                                        *(int *)testHeap1->tree[4] == 80 &&
-                                        *(int *)testHeap1->tree[5] == 30 &&
-                                        *(int *)testHeap1->tree[6] == 20 &&
-                                        *(int *)testHeap1->tree[7] == 10 &&
-                                        *(int *)testHeap1->tree[8] == 50 &&
-                                        *(int *)testHeap1->tree[9] == 40);
+                                          *(int *)testHeap1->tree[0] == 90 &&
+                                          *(int *)testHeap1->tree[1] == 85 &&
+                                          *(int *)testHeap1->tree[2] == 70 &&
+                                          *(int *)testHeap1->tree[3] == 60 &&
+                                          *(int *)testHeap1->tree[4] == 80 &&
+                                          *(int *)testHeap1->tree[5] == 30 &&
+                                          *(int *)testHeap1->tree[6] == 20 &&
+                                          *(int *)testHeap1->tree[7] == 10 &&
+                                          *(int *)testHeap1->tree[8] == 50 &&
+                                          *(int *)testHeap1->tree[9] == 40);
+  
+  // test heap_extract
+  heap_extract(testHeap1, &testPtr1);
+  printf("'heap_extract' is pass ? %d \n", testHeap1->size == 9 &&
+                                          *(int *)testPtr1 == 90 &&
+                                          *(int *)testHeap1->tree[0] == 85 &&
+                                          *(int *)testHeap1->tree[1] == 80 &&
+                                          *(int *)testHeap1->tree[2] == 70 &&
+                                          *(int *)testHeap1->tree[3] == 60 &&
+                                          *(int *)testHeap1->tree[4] == 40 &&
+                                          *(int *)testHeap1->tree[5] == 30 &&
+                                          *(int *)testHeap1->tree[6] == 20 &&
+                                          *(int *)testHeap1->tree[7] == 10 &&
+                                          *(int *)testHeap1->tree[8] == 50);
+
 
   // test heap_destory
   heap_destory(testHeap1);
-  printf("'heap_destory' is pass ? %d \n", bitree_size(testHeap1) == 0);
-
+  printf("'heap_destory' is pass ? %d \n", heap_size(testHeap1) == 0);
+  
   free(testHeap1);
   return 0;
 }
