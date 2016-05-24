@@ -14,7 +14,7 @@
     int ecount;
     int (*match)(const void *key1, const void *key2);
     void (*destory)(void *data);
-    List Adjlists;
+    List adjlists;
   } Graph;
 
   typedef enum _VertexColor_ {white, gray, black} VertexColor;

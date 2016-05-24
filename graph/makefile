@@ -7,18 +7,18 @@ listsObjects = ../list/list_init.o \
 							 ../list/list_pop.o \
 							 ../list/list_shift.o 
 
-setObjects =  ../set/set_init.o \
-							../set/set_destory.o \
-							../set/set_difference.o \
-							../set/set_insert.o \
-							../set/set_intersection.o \
-							../set/set_is_equal.o \
-							../set/set_is_member.o \
-							../set/set_is_subset.o \
-							../set/set_remove.o \
-							../set/set_union.o
+setObjects = ../set/set_init.o \
+						 ../set/set_destory.o \
+						 ../set/set_difference.o \
+						 ../set/set_insert.o \
+						 ../set/set_intersection.o \
+						 ../set/set_is_equal.o \
+						 ../set/set_is_member.o \
+						 ../set/set_is_subset.o \
+						 ../set/set_remove.o \
+						 ../set/set_union.o
 
-graphObjects = main.o graph_init.o
+graphObjects = main.o graph_init.o graph_destory.o
 
 objects =  $(listsObjects) $(setObjects) $(graphObjects)
 

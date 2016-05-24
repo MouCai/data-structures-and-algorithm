@@ -9,5 +9,10 @@ int main (int argc, char **argv) {
   printf("'graph_init' is pass ? %d \n", testGraph1->vcount == 0 &&
                                          testGraph1->ecount == 0 &&
                                          testGraph1->destory == NULL); 
+
+  graph_destory(testGraph1);
+  printf("'graph_destory' is pass ? %d \n", testGraph1->vcount == 0 &&
+                                            testGraph1->ecount == 0 &&
+                                            testGraph1->destory == 0); 
   return 0;
 }
