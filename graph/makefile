@@ -10,7 +10,6 @@ listsObjects = ../list/list_init.o \
 setObjects =  ../set/set_init.o \
 							../set/set_destory.o \
 							../set/set_difference.o \
-							../set/set_init.o \
 							../set/set_insert.o \
 							../set/set_intersection.o \
 							../set/set_is_equal.o \
