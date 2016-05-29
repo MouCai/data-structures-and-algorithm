@@ -6,19 +6,28 @@ static int _match (const void *key1, const void *key2) {
 int main (int argc, char **argv) {
   Graph *testGraph1 = (Graph *)malloc(sizeof(Graph));
   int testData1 = 0;
-  void *testPrt = &testData1;
+  int testData2 = 1;
+  void *testPtr1;
+  void *testPtr2;
 
   graph_init(testGraph1, _match, NULL);
   printf("'graph_init' is pass ? %d \n", testGraph1->vcount == 0 &&
                                          testGraph1->ecount == 0 &&
                                          testGraph1->destory == NULL);
   
-
-  graph_insert_vertex(testGraph1, testPrt);
-  printf("'graph_insert_vertex' is pass ? %d \n", testGraph1->vcount == 1 &&
+  testPtr1 = &testData1;
+  graph_insert_vertex(testGraph1, testPtr1);
+  testPtr2 = &testData2;
+  graph_insert_vertex(testGraph1, testPtr2);
+  printf("'graph_insert_vertex' is pass ? %d \n", testGraph1->vcount == 2 &&
                                                   testGraph1->ecount == 0 &&
                                                   testGraph1->destory == NULL);
 
+  graph_insert_edge(testGraph1, testPtr1, testPtr2);
+  printf("'graph_insert_edge' is pass ? %d \n", testGraph1->vcount == 2 &&
+                                                testGraph1->ecount == 1);
+
+  
 
 
   graph_destory(testGraph1);

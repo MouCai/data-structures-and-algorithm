@@ -3,7 +3,6 @@
 int graph_insert_vertex(Graph *graph, const void *data) {
   ListElm *element;
   AdjList *adjlist;
-
   int result;
 
   for (element = list_head(&graph->adjlists); element != NULL; element = list_next(element)) {
@@ -17,9 +16,9 @@ int graph_insert_vertex(Graph *graph, const void *data) {
   adjlist->vertex = (void *)data;
   set_init(&adjlist->adjacent, graph->match, NULL);
   
-  if ((result = list_push(&graph->adjlists, adjlist)) != 0) {
+  if ((result = list_push(&graph->adjlists, adjlist)) != 0)
     return result;
-  }
+
   graph->vcount++;
   return 0;
 }

@@ -1,6 +1,6 @@
 #include "set.h"
 
-int set_insert (Set *set, void *data) {
+int set_insert (Set *set, const void *data) {
   SetElm *new;
 
   if (set_is_member(set, data))
@@ -9,7 +9,7 @@ int set_insert (Set *set, void *data) {
   new = (SetElm *)malloc(sizeof(SetElm));
   if (new == NULL)
     return -1;
-  new->data = data;
+  new->data = (void *)data;
   new->next = NULL;
   new->prev = NULL;
 
