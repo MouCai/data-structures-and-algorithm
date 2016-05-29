@@ -5,10 +5,21 @@ static int _match (const void *key1, const void *key2) {
 }
 int main (int argc, char **argv) {
   Graph *testGraph1 = (Graph *)malloc(sizeof(Graph));
+  int testData1 = 0;
+  void *testPrt = &testData1;
+
   graph_init(testGraph1, _match, NULL);
   printf("'graph_init' is pass ? %d \n", testGraph1->vcount == 0 &&
                                          testGraph1->ecount == 0 &&
-                                         testGraph1->destory == NULL); 
+                                         testGraph1->destory == NULL);
+  
+
+  graph_insert_vertex(testGraph1, testPrt);
+  printf("'graph_insert_vertex' is pass ? %d \n", testGraph1->vcount == 1 &&
+                                                  testGraph1->ecount == 0 &&
+                                                  testGraph1->destory == NULL);
+
+
 
   graph_destory(testGraph1);
   printf("'graph_destory' is pass ? %d \n", testGraph1->vcount == 0 &&

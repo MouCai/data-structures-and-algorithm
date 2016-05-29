@@ -6,8 +6,8 @@ int graph_insert_vertex(Graph *graph, const void *data) {
 
   int result;
 
-  for (element = list_head(graph->adjlist); element != NULL; element = list_next(element)) {
-    if (graph->match(data, (AdjList *)list_data(element)->vertex)) 
+  for (element = list_head(&graph->adjlists); element != NULL; element = list_next(element)) {
+    if (graph->match(data, ((AdjList *)list_data(element))->vertex)) 
       return 1;
   }
 
