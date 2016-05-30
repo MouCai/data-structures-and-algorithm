@@ -28,6 +28,9 @@ int main (int argc, char **argv) {
                                                 testGraph1->ecount == 1);
 
   
+  graph_remove_vertex(testGraph1, testPtr2);
+  printf("'graph_remove_vertex' is pass ? %d \n", testGraph1->vcount == 1 &&
+                                                  testGraph1->ecount == 0);
 
 
   graph_destory(testGraph1);
