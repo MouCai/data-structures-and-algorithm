@@ -4,7 +4,6 @@ int graph_remove_vertex(Graph *graph, void **data) {
   ListElm *element, *temp;
   AdjList *adjlist;
   int found;
-  int test = 0;
   found = 0;
 
   for (element = list_head(&graph->adjlists); element != NULL; element = list_next(element)) {

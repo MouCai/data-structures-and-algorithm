@@ -18,7 +18,7 @@ setObjects = ../set/set_init.o \
 						 ../set/set_remove.o \
 						 ../set/set_union.o
 
-graphObjects = main.o graph_init.o graph_destory.o graph_insert_vertex.o graph_insert_edge.o graph_remove_vertex.o
+graphObjects = main.o graph_init.o graph_destory.o graph_insert_vertex.o graph_insert_edge.o graph_remove_vertex.o graph_remove_edge.o
 
 objects =  $(listsObjects) $(setObjects) $(graphObjects)
 

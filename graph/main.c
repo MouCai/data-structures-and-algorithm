@@ -30,12 +30,22 @@ int main (int argc, char **argv) {
   testPtr2 = &testData2;
   graph_insert_edge(testGraph1, testPtr1, testPtr2);
   printf("'graph_insert_edge' is pass ? %d \n", testGraph1->vcount == 3 &&
-                                                testGraph1->ecount == 1);
+                                                testGraph1->ecount == 1 &&
+                                                *(int *)testPtr2 == 1);
 
   testPtr2 = &testData3;
   graph_remove_vertex(testGraph1, &testPtr2);
   printf("'graph_remove_vertex' is pass ? %d \n", testGraph1->vcount == 2 &&
-                                                  testGraph1->ecount == 1);
+                                                  testGraph1->ecount == 1 &&
+                                                  *(int *)testPtr2 == 2);
+
+
+  testPtr2 = &testData2;
+  graph_remove_edge(testGraph1, testPtr1, &testPtr2);
+  printf("'graph_remove_edge' is pass ? %d \n", testGraph1->vcount == 2 &&
+                                                  testGraph1->ecount == 0 &&
+                                                  *(int *)testPtr2 == 1);
+  
 
 
   graph_destory(testGraph1);
