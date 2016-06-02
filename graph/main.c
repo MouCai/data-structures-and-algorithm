@@ -39,6 +39,10 @@ int main (int argc, char **argv) {
                                                   testGraph1->ecount == 1 &&
                                                   *(int *)testPtr2 == 2);
 
+  testPtr2 = &testData2;
+  printf("'graph_is_adjacent' is pass ? %d \n", graph_is_adjacent(testGraph1, testPtr1, testPtr2));
+  
+
 
   testPtr2 = &testData2;
   graph_remove_edge(testGraph1, testPtr1, &testPtr2);
