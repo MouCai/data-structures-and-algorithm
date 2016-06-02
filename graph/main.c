@@ -10,6 +10,7 @@ int main (int argc, char **argv) {
   int testData3 = 2;
   void *testPtr1;
   void *testPtr2;
+  AdjList *testAdjlist1;
 
   graph_init(testGraph1, _match, NULL);
   printf("'graph_init' is pass ? %d \n", testGraph1->vcount == 0 &&
@@ -50,6 +51,9 @@ int main (int argc, char **argv) {
                                                   testGraph1->ecount == 0 &&
                                                   *(int *)testPtr2 == 1);
   
+
+  graph_adjlist(testGraph1, testPtr1, &testAdjlist1);
+  printf("'graph_adjlist' is pass ? %d \n", *(int *)testAdjlist1->vertex == 0);
 
 
   graph_destory(testGraph1);

@@ -24,7 +24,7 @@
   int graph_insert_edge(Graph *graph, const void *data1, const void *data2);
   int graph_remove_vertex(Graph *graph, void **data);
   int graph_remove_edge(Graph *graph, void *data1, void **data2);
-  int graph_adjlist(Graph *graph, const void *data, AdjList *adjlist);
+  int graph_adjlist(Graph *graph, const void *data, AdjList **adjlist);
   int graph_is_adjacent(const Graph *graph, const void *data1, const void *data2);
 
   #define graph_adjlists(graph)((graph)->adjlists)

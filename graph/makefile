@@ -25,7 +25,8 @@ graphObjects = main.o \
 							 graph_insert_edge.o \
 							 graph_remove_vertex.o \
 							 graph_remove_edge.o \
-							 graph_is_adjacent.o
+							 graph_is_adjacent.o \
+							 graph_adjlist.o
 
 objects =  $(listsObjects) $(setObjects) $(graphObjects)
 
